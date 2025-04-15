@@ -8,3 +8,4 @@ folium
 matplotlib
 streamlit
 streamlit_folium
+streamlit_image_comparison
