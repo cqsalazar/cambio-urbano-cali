@@ -16,7 +16,7 @@ if not os.path.exists(data_folder):
     os.mkdir(data_folder)
 
 m = leafmap.Map(
-     add_google_map=False,
+    add_google_map=False,
     center=[3.409, -76.526],
     zoom=14,
     zoom_control=True,
