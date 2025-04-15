@@ -8,5 +8,5 @@ folium
 matplotlib
 localtileserver
 streamlit
-streamlit_folium
+streamlit_folium==0.24.0
 streamlit_image_comparison
