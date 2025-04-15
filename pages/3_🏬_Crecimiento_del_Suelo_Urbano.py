@@ -35,7 +35,7 @@ urbano2018 = os.path.join(data_folder, urbano2018)
 urbano2024 = 'Urbano2024.tif'
 urbano2024 = os.path.join(data_folder, urbano2024)
 
-m.add_raster(urbano2024, colormap=["blue", "red"], layer_name="Urbano 2024", nodata=0, opacity=0.5)
+m.add_raster(urbano2024, colormap=["blue", "red"], layer_name="Urbano 2024", nodata=1)
 m.add_raster(urbano2018, colormap=["blue", "darkred"], layer_name="Urbano 2018", nodata=0)
 
 gpkg_file = 'cali.gpkg'
