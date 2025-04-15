@@ -16,6 +16,7 @@ if not os.path.exists(data_folder):
     os.mkdir(data_folder)
 
 m = leafmap.Map(
+    basemap="CartoDB.DarkMatter",
     center=[3.409, -76.526],
     zoom=14,
     zoom_control=True,
@@ -27,7 +28,7 @@ m = leafmap.Map(
     toolbar_control=False
 )
 
-m.add_basemap("CartoDB.DarkMatter")
+#m.add_basemap("CartoDB.DarkMatter")
 
 urbano2018 = 'Urbano2018.tif'
 urbano2018 = os.path.join(data_folder, urbano2018)
