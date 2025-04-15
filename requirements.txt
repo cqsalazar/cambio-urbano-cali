@@ -6,6 +6,7 @@ rasterio
 openpyxl
 folium
 matplotlib
+localtileserver
 streamlit
 streamlit_folium
 streamlit_image_comparison
