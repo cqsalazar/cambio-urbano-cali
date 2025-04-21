@@ -1,7 +1,11 @@
 import os
+import folium
+import rasterio
+import numpy as np
 import streamlit as st
 import geopandas as gpd
 import leafmap.foliumap as leafmap
+from streamlit_folium import folium_static
 
 st.title('Crecimiento Urbano 2018-2024')
 
@@ -16,7 +20,6 @@ if not os.path.exists(data_folder):
     os.mkdir(data_folder)
 
 m = leafmap.Map(
-    add_google_map=False,
     center=[3.409, -76.526],
     zoom=14,
     zoom_control=True,
@@ -30,17 +33,66 @@ m = leafmap.Map(
 
 m.add_basemap("CartoDB.DarkMatter")
 
-urbano2018 = 'Urbano2018.tif'
-urbano2018 = os.path.join(data_folder, urbano2018)
-urbano2024 = 'Urbano2024.tif'
-urbano2024 = os.path.join(data_folder, urbano2024)
+# urbano2018 = 'Urbano2018.tif'
+# urbano2018 = os.path.join(data_folder, urbano2018)
+# urbano2024 = 'Urbano2024.tif'
+# urbano2024 = os.path.join(data_folder, urbano2024)
 
-m.add_raster(urbano2024, colormap=["red"], layer_name="Urbano 2024", nodata=0)
-m.add_raster(urbano2018, colormap=["blue", "darkred"], layer_name="Urbano 2018", nodata=0)
+# m.add_raster(urbano2024, colormap=["blue", "red"], layer_name="Urbano 2024", nodata=0)
+# m.add_raster(urbano2018, colormap=["blue", "darkred"], layer_name="Urbano 2018", nodata=0)
+
+
+raster_to_coloridx_2018 = {0: (1, 1, 1, 0), 1: (0.5, 0, 0, 1.0)}
+raster_to_coloridx_2024 = {0: (1, 1, 1, 0), 1: (1, 0, 0, 1.0)}
+
+# A dummy Sentinel 2 COG I had laying around
+urbano2024 = "data/Urbano2024.tif"
+# This is probably hugely inefficient, but it works. Opens the COG as a numpy array
+src = rasterio.open(urbano2024)
+array = src.read()
+bounds = src.bounds
+
+x1,y1,x2,y2 = src.bounds
+bbox = [(bounds.bottom, bounds.left), (bounds.top, bounds.right)]
+
+img1 = folium.raster_layers.ImageOverlay(
+    name="Urbano 2024",
+    colormap=lambda x: raster_to_coloridx_2024[x],
+    image=np.moveaxis(array, 0, -1),
+    bounds=bbox,
+    opacity=0.9,
+    interactive=True,
+    cross_origin=False,
+    zindex=1
+)
+
+folium.Popup("Urbano 2024").add_to(img1)
+img1.add_to(m)
+
+urbano2018 = "data/Urbano2018.tif"
+src = rasterio.open(urbano2018)
+array = src.read()
+bounds = src.bounds
+
+x1,y1,x2,y2 = src.bounds
+bbox = [(bounds.bottom, bounds.left), (bounds.top, bounds.right)]
+
+img2 = folium.raster_layers.ImageOverlay(
+    name="Urbano 2018",
+    colormap=lambda x: raster_to_coloridx_2018[x],
+    image=np.moveaxis(array, 0, -1),
+    bounds=bbox,
+    opacity=0.9,
+    interactive=True,
+    cross_origin=False,
+    zindex=1
+)
+
+img2.add_to(m)
+
 
 gpkg_file = 'cali.gpkg'
 gpkg_filepath = os.path.join(data_folder, gpkg_file)
-
 
 perim_mun = gpd.read_file(gpkg_filepath, layer='Perimetro_Municipal')
 comunas = gpd.read_file(gpkg_filepath, layer='Comunas')
