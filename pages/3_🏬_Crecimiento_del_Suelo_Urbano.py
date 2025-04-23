@@ -104,7 +104,7 @@ m.add_gdf(comunas, layer_name='Comunas', style={'color':'gray', 'fill':'white', 
 m.add_gdf(cen_pob, layer_name='Centros Poblados', style={'color':'white', 'fill':None, 'weight':1})
 m.add_gdf(area_exp, layer_name='Área de Expansión', style={'color':'olive', 'fill':None, 'weight':1})
 m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver', 'fill': None, 'weight':2})
-m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida')
+m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', fill_colors=["red", "yellow", "green", "orange"])
 
 colors = ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"]
 vmin = 0
