@@ -104,8 +104,7 @@ m.add_gdf(comunas, layer_name='Comunas', style={'color':'gray', 'fill':'white', 
 m.add_gdf(cen_pob, layer_name='Centros Poblados', style={'color':'white', 'fill':None, 'weight':1})
 m.add_gdf(area_exp, layer_name='Área de Expansión', style={'color':'olive', 'fill':None, 'weight':1})
 m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver', 'fill': None, 'weight':2})
-m.add_gdf(dif_a_cons, column='DIF_CONS', cmap='RdYlGn_r', layer_name='Cambio en Área Construida', fill_color='YlOrBr')
-
+m.Choropleth(dif_a_cons, column='DIF_CONS', cmap='RdYlGn_r', layer_name='Cambio en Área Construida', fill_color='YlOrBr')
 
 
 #m.add_labels(
