@@ -110,7 +110,7 @@ colors = ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"]
 vmin = 0
 vmax = 4000
 m.add_colorbar(colors=colors, vmin=vmin, vmax=vmax)
-style = {"fillOpacity": 1}
+style = {"fillOpacity": 1, 'weight':1}
 
 m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, fill_colors=["#006633","#E5FFCC","#662A00","#D8D8D8","#F5F5F5"])
 
