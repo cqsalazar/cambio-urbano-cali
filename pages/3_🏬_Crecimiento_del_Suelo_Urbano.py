@@ -117,7 +117,7 @@ classification_kwds={
   'bins':[0,100000,200000,300000,400000]
 }
 
-m.add_gdf(dif_a_cons, column='DIF_CONS', cmap='RdYlGn_r', layer_name='Cambio en Área Construida', scheme='User_Defined', legend=True, legend_kwds=legend_kwds))
+m.add_gdf(dif_a_cons, column='DIF_CONS', cmap='RdYlGn_r', layer_name='Cambio en Área Construida', scheme='User_Defined', legend=True, legend_kwds=legend_kwds)
 
 
 
