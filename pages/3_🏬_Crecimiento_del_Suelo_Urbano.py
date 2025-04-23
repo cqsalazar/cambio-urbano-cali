@@ -106,6 +106,10 @@ m.add_gdf(area_exp, layer_name='Área de Expansión', style={'color':'olive', 'f
 m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver', 'fill': None, 'weight':2})
 m.Choropleth(dif_a_cons, column='DIF_CONS', cmap='RdYlGn_r', layer_name='Cambio en Área Construida', fill_color='YlOrBr')
 
+colors = ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"]
+vmin = 0
+vmax = 4000
+m.add_colorbar(colors=colors, vmin=vmin, vmax=vmax)
 
 #m.add_labels(
 #    comunas,
