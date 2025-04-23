@@ -112,7 +112,7 @@ vmax = 4000
 m.add_colorbar(colors=colors, vmin=vmin, vmax=vmax)
 style = {"fillOpacity": 1}
 
-m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, fill_colors=["blue","red","green"])
+m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, fill_colors=["#006633","#E5FFCC","green"])
 
 #m.add_labels(
 #    comunas,
