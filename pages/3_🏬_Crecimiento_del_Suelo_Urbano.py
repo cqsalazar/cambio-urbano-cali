@@ -108,7 +108,7 @@ m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver',
 
 colors = ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"]
 vmin = 0
-vmax = 4000
+vmax = 400000
 m.add_colorbar(colors=colors, vmin=vmin, vmax=vmax)
 style = {"fillOpacity": 1, 'weight':0}
 
