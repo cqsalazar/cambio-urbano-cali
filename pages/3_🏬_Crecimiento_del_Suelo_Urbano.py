@@ -98,7 +98,7 @@ perim_mun = gpd.read_file(gpkg_filepath, layer='Perimetro_Municipal')
 comunas = gpd.read_file(gpkg_filepath, layer='Comunas')
 cen_pob = gpd.read_file(gpkg_filepath, layer='bcs_centros_poblados')
 area_exp = gpd.read_file(gpkg_filepath, layer='area_expansion')
-dif_a_cons = gpd.read_file(gpkg_filepath, layer='diferencia_area_construida')
+dif_a_cons = gpd.read_file(gpkg_filepath, layer='AreaConstruida_Barrios')
 
 m.add_gdf(comunas, layer_name='Comunas', style={'color':'gray', 'fill':'white', 'weight':1})
 m.add_gdf(cen_pob, layer_name='Centros Poblados', style={'color':'white', 'fill':None, 'weight':1})
