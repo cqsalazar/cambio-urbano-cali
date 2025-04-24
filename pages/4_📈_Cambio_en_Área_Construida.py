@@ -40,24 +40,21 @@ dif_a_cons = gpd.read_file(gpkg_filepath, layer='AreaConstruida_Barrios')
 callback = lambda feat: {"color": feat["properties"]["SIMBOLOGY"], "fillOpacity": 1, 'weight':2}
 m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style_callback=callback, visible=False)
 
-m.add_gdf(comunas, layer_name='Comunas', style={'color':'gray', 'fill':'white', 'weight':1})
+m.add_gdf(comunas, layer_name='Comunas', style={'color':'gray', 'fill':None, 'weight':1})
 m.add_gdf(cen_pob, layer_name='Centros Poblados', style={'color':'white', 'fill':None, 'weight':1})
 m.add_gdf(area_exp, layer_name='Área de Expansión', style={'color':'olive', 'fill':None, 'weight':1})
 m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver', 'fill': None, 'weight':2})
 
-
-colors = ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"]
-vmin = 0
-vmax = 400000
-m.add_colorbar(colors=colors, vmin=vmin, vmax=vmax)
-
 legend_dict = {
-    'Urbano 2018': 'darkred',
-    'Urbano 2024': 'red'
+    "Sin cambio": "darkred",
+    "0 - 10 ha": "d1def8",
+    "10 - 20 ha": "dec5c5",
+    "20 - 30 ha": "d99282",
+    "30 - 40 ha": "eb0000"
 }
 
 # Add the legend to the map
-m.add_legend(title='', legend_dict=legend_dict)
+m.add_legend(title='Cambio en Área Construida', legend_dict=legend_dict)
 
 bounds = [-76.552734, 3.480119, -76.480231, 3.330466]
 m.zoom_to_bounds(bounds)
