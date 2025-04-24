@@ -108,7 +108,7 @@ m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver',
 
 callback = lambda feat: {"color": feat["properties"]["SIMBOLOGY"], "fillOpacity": 1, 'weight':2}
 
-m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style_callback=callback)
+m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style_callback=callback, shown=False)
 
 colors = ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"]
 vmin = 0
