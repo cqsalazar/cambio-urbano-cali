@@ -42,7 +42,7 @@ m.add_gdf(cen_pob, layer_name='Centros Poblados', style={'color':'white', 'fill'
 m.add_gdf(area_exp, layer_name='Área de Expansión', style={'color':'olive', 'fill':None, 'weight':1})
 m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver', 'fill': None, 'weight':2})
 
-m.add_labels(comunas, 'COMUNA', font_size='12pt', font_color='black', font_family='arial', font_weight='normal', x='longitude', y='latitude', draggable=True, layer_name='Labels', **kwargs)
+m.add_labels(comunas, 'COMUNA', font_size='12pt', font_color='black', font_family='arial', font_weight='normal', x='longitude', y='latitude', draggable=True, layer_name='Labels')
 
 
 legend_dict = {
