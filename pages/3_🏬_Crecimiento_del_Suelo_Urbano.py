@@ -109,7 +109,9 @@ style = {"stroke": True, "column":'CATEGORIA', "fillOpacity": 1, 'weight':0}
 
 #m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, fill_colors=["#FFFFE5","#FEE391","#FE9929","#CC4C02","#662506"])
 
-m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, fill_colors=["#FFFFE5", "#FEE391", "#FE9929", "#CC4C02", "#662506"])
+#m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, fill_colors=["#FFFFE5", "#FEE391", "#FE9929", "#CC4C02", "#662506"])
+
+m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', column='SIMBOLOGY', style=style)
 
 colors = ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"]
 vmin = 0
