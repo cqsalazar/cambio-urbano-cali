@@ -42,9 +42,6 @@ m.add_gdf(cen_pob, layer_name='Centros Poblados', style={'color':'white', 'fill'
 m.add_gdf(area_exp, layer_name='Área de Expansión', style={'color':'olive', 'fill':None, 'weight':1})
 m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver', 'fill': None, 'weight':2})
 
-m.add_labels(comunas, 'COMUNA', font_size='12pt', font_color='black', font_family='arial', font_weight='normal', x='LONGITUD', y='LATITUD', draggable=True, layer_name='Labels')
-
-
 legend_dict = {
     "Sin cambio": "#FFFFE5",
     "0 - 10 ha": "#FEE391",
@@ -53,7 +50,6 @@ legend_dict = {
     "30 - 40 ha": "#662506"
 }
 
-# Add the legend to the map
 m.add_legend(title='Cambio en Área Construida', legend_dict=legend_dict)
 
 bounds = [-76.552734, 3.480119, -76.480231, 3.330466]
