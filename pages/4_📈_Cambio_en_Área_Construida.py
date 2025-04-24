@@ -1,11 +1,8 @@
 import os
 import folium
-import rasterio
-import numpy as np
 import streamlit as st
 import geopandas as gpd
 import leafmap.foliumap as leafmap
-from streamlit_folium import folium_static
 
 st.title('Cambio en Área Construida')
 
@@ -48,9 +45,9 @@ m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver',
 legend_dict = {
     "Sin cambio": "#FFFFE5",
     "0 - 10 ha": "#FEE391",
-    "10 - 20 ha": "dec5c5",
-    "20 - 30 ha": "d99282",
-    "30 - 40 ha": "eb0000"
+    "10 - 20 ha": "#FE9929",
+    "20 - 30 ha": "#CC4C02",
+    "30 - 40 ha": "#662506"
 }
 
 # Add the legend to the map
