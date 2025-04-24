@@ -106,7 +106,7 @@ m.add_gdf(area_exp, layer_name='Área de Expansión', style={'color':'olive', 'f
 m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver', 'fill': None, 'weight':2})
 
 
-callback = lambda feat: {"color": feat["properties"]["SIMBOLOGY"], "stroke": True, "fillOpacity": 1, 'weight':0.5}
+callback = lambda feat: {"color": feat["properties"]["SIMBOLOGY"], "fillOpacity": 1, 'weight':0.5}
 
 m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style_callback=callback)
 
