@@ -107,7 +107,7 @@ m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver',
 
 def my_color_function(feature):
     """Maps low values to green and high values to red."""
-    if unemployment_dict[feature["id"]] > 6.5:
+    if dif_a_cons[feature["DIFERENCIA"]] > 6.5:
         return "#ff0000"
     else:
         return "#008000"
