@@ -105,6 +105,13 @@ m.add_gdf(cen_pob, layer_name='Centros Poblados', style={'color':'white', 'fill'
 m.add_gdf(area_exp, layer_name='Área de Expansión', style={'color':'olive', 'fill':None, 'weight':1})
 m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver', 'fill': None, 'weight':2})
 
+def my_color_function(feature):
+    """Maps low values to green and high values to red."""
+    if unemployment_dict[feature["id"]] > 6.5:
+        return "#ff0000"
+    else:
+        return "#008000"
+
 
 colors = ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"]
 vmin = 0
@@ -112,7 +119,14 @@ vmax = 400000
 m.add_colorbar(colors=colors, vmin=vmin, vmax=vmax)
 style = {"stroke": True, "column":'CATEGORIA', "fillOpacity": 1, 'weight':0}
 
-m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, fill_colors=["#FFFFE5","#FEE391","#FE9929","#CC4C02","#662506"])
+#m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, fill_colors=["#FFFFE5","#FEE391","#FE9929","#CC4C02","#662506"])
+
+m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style_function=lambda feature: {
+        "fillColor": my_color_function(feature),
+        "color": "black",
+        "weight": 2,
+        "dashArray": "5, 5",
+    })
 
 #m.add_labels(
 #    comunas,
