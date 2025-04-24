@@ -107,7 +107,7 @@ m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver',
 
 style = {"stroke": True, "fillOpacity": 1, 'weight':0}
 
-m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, style_callback='SIMBOLOGY', fill_colors=["#FFFFE5","#FEE391","#FE9929","#CC4C02","#662506"])
+m.add_gdf(dif_a_cons, layer_name='Cambio en Área Construida', style=style, fill_colors=["#FFFFE5","#FEE391","#FE9929","#CC4C02","#662506"])
 
 colors = ["006633", "E5FFCC", "662A00", "D8D8D8", "F5F5F5"]
 vmin = 0
