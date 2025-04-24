@@ -46,8 +46,8 @@ m.add_gdf(area_exp, layer_name='Área de Expansión', style={'color':'olive', 'f
 m.add_gdf(perim_mun, layer_name='Perímetro Municipal', style={'color':'silver', 'fill': None, 'weight':2})
 
 legend_dict = {
-    "Sin cambio": "darkred",
-    "0 - 10 ha": "d1def8",
+    "Sin cambio": "#FFFFE5",
+    "0 - 10 ha": "#FEE391",
     "10 - 20 ha": "dec5c5",
     "20 - 30 ha": "d99282",
     "30 - 40 ha": "eb0000"
